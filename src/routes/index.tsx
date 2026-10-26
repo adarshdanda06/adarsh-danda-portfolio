@@ -1,24 +1,75 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "adarsh danda" },
+      { name: "description", content: "Projects, contests, and work by Adarsh Danda." },
+      { property: "og:title", content: "adarsh danda" },
+      { property: "og:description", content: "Projects, contests, and work by Adarsh Danda." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+const projects = [
+  { title: "Project One", desc: "A short description of a project you built, what it does, and why it matters." },
+  { title: "Project Two", desc: "A high-performance system written to solve a hard problem quickly and reliably." },
+  { title: "Project Three", desc: "A hardware + software build that displays live data in a fun, physical way." },
+  { title: "Project Four", desc: "Automation scripts and tools that make everyday tasks faster." },
+];
+
+const contests = [
+  { title: "Hackathon Name", date: "2025", place: "1st", desc: "Built and pitched a product idea to a panel of judges." },
+  { title: "Startup Weekend", date: "2024", place: "1st", desc: "Developed an AI assistant prototype in 54 hours." },
+  { title: "Academic Challenge", date: "2022", place: "2nd", desc: "Competed in computer science against regional teams." },
+];
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="mx-auto max-w-3xl px-6 py-20 font-mono">
+      <h1 className="text-5xl font-bold tracking-tight">adarsh danda</h1>
+      <nav className="mt-4 flex gap-4 text-sm text-muted-foreground">
+        <a href="#projects" className="hover:text-foreground">projects</a>
+        <a href="#contests" className="hover:text-foreground">contests</a>
+        <a href="mailto:hello@example.com" className="hover:text-foreground">contact</a>
+      </nav>
+
+      <section id="projects" className="mt-20">
+        <h2 className="mb-8 text-2xl font-semibold">projects</h2>
+        <div className="space-y-10">
+          {projects.map((p) => (
+            <article key={p.title} className="border-l-2 border-primary pl-5">
+              <h3 className="text-lg font-semibold">{p.title}</h3>
+              <p className="mt-2 text-muted-foreground">{p.desc}</p>
+              <div className="mt-3 flex gap-4 text-sm">
+                <a href="#" className="text-primary underline-offset-4 hover:underline">Read More</a>
+                <a href="#" className="text-primary underline-offset-4 hover:underline">View Code</a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contests" className="mt-20">
+        <h2 className="mb-8 text-2xl font-semibold">contests</h2>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {contests.map((c) => (
+            <article key={c.title} className="rounded-lg border bg-card p-5">
+              <div className="flex items-start justify-between gap-2">
+                <h4 className="font-semibold">{c.title}</h4>
+                <span className="rounded bg-primary px-2 py-0.5 text-xs text-primary-foreground">{c.place}</span>
+              </div>
+              <p className="mt-1 text-xs text-muted-foreground">{c.date}</p>
+              <p className="mt-3 text-sm text-muted-foreground">{c.desc}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <footer className="mt-24 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
+    </main>
   );
 }
