@@ -53,6 +53,9 @@ function Index() {
           <a href="#projects" className={linkClass}>
             projects
           </a>
+          <a href="#bio" className={linkClass}>
+            bio
+          </a>
           <a href="mailto:hello@example.com" className={linkClass}>
             contact
           </a>
