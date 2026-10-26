@@ -53,7 +53,7 @@ function Index() {
 
       </section>
 
-      <section id="social" className="mx-auto max-w-3xl px-6 pb-20">
+      <section id="social" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">social</h2>
         <div className="flex flex-wrap gap-x-8 gap-y-3">
           {socials.map((s) => (
@@ -70,7 +70,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="projects" className="mx-auto max-w-3xl px-6 pb-20">
+      <section id="projects" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">projects</h2>
         <div className="space-y-10">
           {projects.map((p) => (
@@ -86,7 +86,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="bio" className="mx-auto max-w-3xl px-6 pb-20">
+      <section id="bio" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">bio</h2>
         <p className="text-muted-foreground">
           I build software and hardware, and I like taking an idea from a rough sketch to something
@@ -95,7 +95,7 @@ function Index() {
         </p>
       </section>
 
-      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20">
+      <section id="contact" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">contact</h2>
         <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
           hello@example.com
