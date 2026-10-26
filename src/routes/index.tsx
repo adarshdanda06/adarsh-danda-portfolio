@@ -94,7 +94,7 @@ function Index() {
             worked on internal tools at John Deere.
           </p>
           <p>
-            I previously did AI security research at UIUC and worked on CVE-Bench, and worked on
+            I also did AI security research at UIUC and worked on CVE-Bench, and worked on
             agentic AI and ML systems during other experiences.
           </p>
         </div>
