@@ -15,9 +15,9 @@ export const Route = createFileRoute("/")({
 });
 
 const socials = [
-  { label: "social", href: "https://github.com/adarshdanda" },
-  { label: "\n", href: "https://www.linkedin.com/in/adarshdanda" },
-  { label: "\n", href: "https://x.com/adarshdanda" },
+  { label: "github", href: "https://github.com/adarshdanda" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/adarshdanda" },
+  { label: "x", href: "https://x.com/adarshdanda" },
 ];
 
 const projects = [
@@ -43,20 +43,16 @@ function Index() {
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
 
         <nav className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-3xl sm:text-4xl">
-          <div className="flex items-center">
-            {socials.map((s) => (
-              <a key={s.href} href={s.href} target="_blank" rel="noreferrer" className={linkClass}>
-                {s.label}
-              </a>
-            ))}
-          </div>
+          <a href="#social" className={linkClass}>
+            social
+          </a>
           <a href="#projects" className={linkClass}>
             projects
           </a>
           <a href="#bio" className={linkClass}>
             bio
           </a>
-          <a href="mailto:hello@example.com" className={linkClass}>
+          <a href="#contact" className={linkClass}>
             contact
           </a>
         </nav>
@@ -102,6 +98,30 @@ function Index() {
             </article>
           ))}
         </div>
+      </section>
+
+      <section id="social" className="mx-auto max-w-3xl px-6 pb-20">
+        <h2 className="mb-8 text-2xl font-semibold">social</h2>
+        <div className="flex flex-wrap gap-x-8 gap-y-3">
+          {socials.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20">
+        <h2 className="mb-8 text-2xl font-semibold">contact</h2>
+        <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
+          hello@example.com
+        </a>
       </section>
 
       <footer className="mx-auto max-w-3xl px-6 pb-16 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
