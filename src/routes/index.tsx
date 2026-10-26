@@ -22,8 +22,7 @@ const socials = [
   { label: "email", href: "mailto:adarsh.danda1@gmail.com" },
 ];
 
-const linkClass =
-  "text-muted-foreground transition-colors hover:text-foreground hover:underline hover:underline-offset-8";
+const linkClass = "text-muted-foreground transition-colors hover:text-foreground";
 
 function NextArrow({ to }: { to: string }) {
   return (
