@@ -4,9 +4,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "adarsh danda" },
-      { name: "description", content: "Projects, contests, and work by Adarsh Danda." },
+      { name: "description", content: "Projects and work by Adarsh Danda." },
       { property: "og:title", content: "adarsh danda" },
-      { property: "og:description", content: "Projects, contests, and work by Adarsh Danda." },
+      { property: "og:description", content: "Projects and work by Adarsh Danda." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -25,12 +25,6 @@ const projects = [
   { title: "Project Two", desc: "A high-performance system written to solve a hard problem quickly and reliably." },
   { title: "Project Three", desc: "A hardware + software build that displays live data in a fun, physical way." },
   { title: "Project Four", desc: "Automation scripts and tools that make everyday tasks faster." },
-];
-
-const contests = [
-  { title: "Hackathon Name", date: "2025", place: "1st", desc: "Built and pitched a product idea to a panel of judges." },
-  { title: "Startup Weekend", date: "2024", place: "1st", desc: "Developed an AI assistant prototype in 54 hours." },
-  { title: "Academic Challenge", date: "2022", place: "2nd", desc: "Competed in computer science against regional teams." },
 ];
 
 const linkClass =
@@ -106,22 +100,6 @@ function Index() {
         <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
           hello@example.com
         </a>
-      </section>
-
-      <section id="contests" className="mx-auto max-w-3xl px-6 pb-20">
-        <h2 className="mb-8 text-2xl font-semibold">contests</h2>
-        <div className="grid gap-6 sm:grid-cols-2">
-          {contests.map((c) => (
-            <article key={c.title} className="rounded-lg border bg-card p-5">
-              <div className="flex items-start justify-between gap-2">
-                <h4 className="font-semibold">{c.title}</h4>
-                <span className="rounded bg-primary px-2 py-0.5 text-xs text-primary-foreground">{c.place}</span>
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">{c.date}</p>
-              <p className="mt-3 text-sm text-muted-foreground">{c.desc}</p>
-            </article>
-          ))}
-        </div>
       </section>
 
       <footer className="mx-auto max-w-3xl px-6 pb-16 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
