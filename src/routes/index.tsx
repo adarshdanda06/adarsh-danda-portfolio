@@ -16,10 +16,10 @@ export const Route = createFileRoute("/")({
 });
 
 const socials = [
-  { label: "github", href: "https://github.com/adarshdanda" },
-  { label: "linkedin", href: "https://www.linkedin.com/in/adarshdanda" },
+  { label: "github", href: "https://github.com/adarshdanda06" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/adarsh-danda/" },
   { label: "x", href: "https://x.com/adarshdanda" },
-  { label: "email", href: "mailto:hello@example.com" },
+  { label: "email", href: "mailto:adarsh.danda1@gmail.com" },
 ];
 
 const projects = [
