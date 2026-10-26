@@ -94,8 +94,16 @@ function Index() {
             worked on internal tools at John Deere.
           </p>
           <p>
-            I also did AI security research at UIUC and worked on CVE-Bench, and worked on
-            agentic AI and ML systems during other experiences.
+            I also did AI security research at UIUC and worked on{" "}
+            <a
+              href="https://arxiv.org/abs/2503.17332"
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              CVE-Bench
+            </a>
+            , and worked on agentic AI and ML systems during other experiences.
           </p>
         </div>
         <NextArrow to="projects" />
