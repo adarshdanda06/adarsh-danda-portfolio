@@ -84,11 +84,20 @@ function Index() {
 
       <section id="bio" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">bio</h2>
-        <p className="text-muted-foreground">
-          I build software and hardware, and I like taking an idea from a rough sketch to something
-          that actually runs. Most of my work sits at the overlap of code, circuits, and clean
-          design — small tools, quick prototypes, and the occasional contest build.
-        </p>
+        <div className="space-y-4 text-muted-foreground">
+          <p>
+            I study CS at UIUC. My interests lie in robotics, autonomous vehicles, and startups right
+            now.
+          </p>
+          <p>
+            I previously worked at Microsoft optimizing the Azure billing pipeline. Before that, I
+            worked on internal tools at John Deere.
+          </p>
+          <p>
+            I previously did AI security research at UIUC and worked on CVE-Bench, and worked on
+            agentic AI and ML systems during other experiences.
+          </p>
+        </div>
         <NextArrow to="projects" />
       </section>
 
