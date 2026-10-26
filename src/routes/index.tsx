@@ -59,6 +59,23 @@ function Index() {
 
       </section>
 
+      <section id="social" className="mx-auto max-w-3xl px-6 pb-20">
+        <h2 className="mb-8 text-2xl font-semibold">social</h2>
+        <div className="flex flex-wrap gap-x-8 gap-y-3">
+          {socials.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </section>
+
       <section id="projects" className="mx-auto max-w-3xl px-6 pb-20">
         <h2 className="mb-8 text-2xl font-semibold">projects</h2>
         <div className="space-y-10">
@@ -84,6 +101,13 @@ function Index() {
         </p>
       </section>
 
+      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20">
+        <h2 className="mb-8 text-2xl font-semibold">contact</h2>
+        <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
+          hello@example.com
+        </a>
+      </section>
+
       <section id="contests" className="mx-auto max-w-3xl px-6 pb-20">
         <h2 className="mb-8 text-2xl font-semibold">contests</h2>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -98,30 +122,6 @@ function Index() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section id="social" className="mx-auto max-w-3xl px-6 pb-20">
-        <h2 className="mb-8 text-2xl font-semibold">social</h2>
-        <div className="flex flex-wrap gap-x-8 gap-y-3">
-          {socials.map((s) => (
-            <a
-              key={s.href}
-              href={s.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              {s.label}
-            </a>
-          ))}
-        </div>
-      </section>
-
-      <section id="contact" className="mx-auto max-w-3xl px-6 pb-20">
-        <h2 className="mb-8 text-2xl font-semibold">contact</h2>
-        <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
-          hello@example.com
-        </a>
       </section>
 
       <footer className="mx-auto max-w-3xl px-6 pb-16 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
