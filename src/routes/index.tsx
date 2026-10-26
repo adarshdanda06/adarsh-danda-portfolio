@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 
+import { ThemeToggle } from "@/components/theme-toggle";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -40,6 +42,7 @@ function NextArrow({ to }: { to: string }) {
 function Index() {
   return (
     <main className="font-mono">
+      <ThemeToggle />
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
 
