@@ -53,11 +53,11 @@ function Index() {
           <a href="#social" className={linkClass}>
             social
           </a>
-          <a href="#projects" className={linkClass}>
-            projects
-          </a>
           <a href="#bio" className={linkClass}>
             bio
+          </a>
+          <a href="#projects" className={linkClass}>
+            projects
           </a>
           <a href="#contact" className={linkClass}>
             contact
@@ -82,6 +82,16 @@ function Index() {
             </a>
           ))}
         </div>
+        <NextArrow to="bio" />
+      </section>
+
+      <section id="bio" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
+        <h2 className="mb-8 text-2xl font-semibold">bio</h2>
+        <p className="text-muted-foreground">
+          I build software and hardware, and I like taking an idea from a rough sketch to something
+          that actually runs. Most of my work sits at the overlap of code, circuits, and clean
+          design — small tools, quick prototypes, and the occasional contest build.
+        </p>
         <NextArrow to="projects" />
       </section>
 
@@ -99,16 +109,6 @@ function Index() {
             </article>
           ))}
         </div>
-        <NextArrow to="bio" />
-      </section>
-
-      <section id="bio" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
-        <h2 className="mb-8 text-2xl font-semibold">bio</h2>
-        <p className="text-muted-foreground">
-          I build software and hardware, and I like taking an idea from a rough sketch to something
-          that actually runs. Most of my work sits at the overlap of code, circuits, and clean
-          design — small tools, quick prototypes, and the occasional contest build.
-        </p>
         <NextArrow to="contact" />
       </section>
 
