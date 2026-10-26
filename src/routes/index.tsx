@@ -15,9 +15,9 @@ export const Route = createFileRoute("/")({
 });
 
 const socials = [
-  { label: "github", href: "https://github.com/adarshdanda" },
-  { label: "linkedin", href: "https://www.linkedin.com/in/adarshdanda" },
-  { label: "x", href: "https://x.com/adarshdanda" },
+  { label: "social", href: "https://github.com/adarshdanda" },
+  { label: "\n", href: "https://www.linkedin.com/in/adarshdanda" },
+  { label: "\n", href: "https://x.com/adarshdanda" },
 ];
 
 const projects = [
