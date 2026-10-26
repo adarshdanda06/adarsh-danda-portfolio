@@ -49,13 +49,15 @@ function Index() {
     <main className="font-mono">
       <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
+        <p className="mt-6 max-w-2xl text-muted-foreground">
+          I build software and hardware, and I like taking an idea from a rough sketch to something
+          that actually runs. Most of my work sits at the overlap of code, circuits, and clean
+          design — small tools, quick prototypes, and the occasional contest build.
+        </p>
 
         <nav className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-3xl sm:text-4xl">
           <a href="#social" className={linkClass}>
             social
-          </a>
-          <a href="#bio" className={linkClass}>
-            bio
           </a>
           <a href="#projects" className={linkClass}>
             projects
@@ -79,16 +81,6 @@ function Index() {
             </a>
           ))}
         </div>
-        <NextArrow to="bio" />
-      </section>
-
-      <section id="bio" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
-        <h2 className="mb-8 text-2xl font-semibold">bio</h2>
-        <p className="text-muted-foreground">
-          I build software and hardware, and I like taking an idea from a rough sketch to something
-          that actually runs. Most of my work sits at the overlap of code, circuits, and clean
-          design — small tools, quick prototypes, and the occasional contest build.
-        </p>
         <NextArrow to="projects" />
       </section>
 
