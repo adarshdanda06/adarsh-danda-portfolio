@@ -1,0 +1,49 @@
+# Builds the site as static HTML and deploys it to GitHub Pages on every push to main.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let an in-progress deploy finish, but skip any queued ones in favor of the latest push.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - run: bun install --frozen-lockfile
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      # BASE_PATH switches vite.config.ts into static prerender mode served from /<repo>/.
+      - run: bun run build
+        env:
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
