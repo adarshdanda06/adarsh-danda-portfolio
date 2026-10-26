@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { ChevronDown } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,10 +31,22 @@ const projects = [
 const linkClass =
   "text-muted-foreground transition-colors hover:text-foreground hover:underline hover:underline-offset-8";
 
+function NextArrow({ to }: { to: string }) {
+  return (
+    <a
+      href={`#${to}`}
+      aria-label={`Go to ${to}`}
+      className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground transition-colors hover:text-foreground"
+    >
+      <ChevronDown className="h-8 w-8 animate-bounce" />
+    </a>
+  );
+}
+
 function Index() {
   return (
     <main className="font-mono">
-      <section className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
+      <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
 
         <nav className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-3xl sm:text-4xl">
@@ -51,9 +64,10 @@ function Index() {
           </a>
         </nav>
 
+        <NextArrow to="social" />
       </section>
 
-      <section id="social" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
+      <section id="social" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">social</h2>
         <div className="flex flex-wrap gap-x-8 gap-y-3">
           {socials.map((s) => (
@@ -68,9 +82,10 @@ function Index() {
             </a>
           ))}
         </div>
+        <NextArrow to="projects" />
       </section>
 
-      <section id="projects" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
+      <section id="projects" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">projects</h2>
         <div className="space-y-10">
           {projects.map((p) => (
@@ -84,18 +99,20 @@ function Index() {
             </article>
           ))}
         </div>
+        <NextArrow to="bio" />
       </section>
 
-      <section id="bio" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
+      <section id="bio" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">bio</h2>
         <p className="text-muted-foreground">
           I build software and hardware, and I like taking an idea from a rough sketch to something
           that actually runs. Most of my work sits at the overlap of code, circuits, and clean
           design — small tools, quick prototypes, and the occasional contest build.
         </p>
+        <NextArrow to="contact" />
       </section>
 
-      <section id="contact" className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
+      <section id="contact" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
         <h2 className="mb-8 text-2xl font-semibold">contact</h2>
         <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
           hello@example.com
