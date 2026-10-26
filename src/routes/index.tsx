@@ -42,10 +42,10 @@ function Index() {
       <section className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
 
-        <nav className="mt-16 flex flex-col items-center gap-6 text-3xl sm:text-4xl">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+        <nav className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-3xl sm:text-4xl">
+          <div className="flex items-center">
             {socials.map((s) => (
-              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className={linkClass}>
+              <a key={s.href} href={s.href} target="_blank" rel="noreferrer" className={linkClass}>
                 {s.label}
               </a>
             ))}
@@ -57,6 +57,7 @@ function Index() {
             contact
           </a>
         </nav>
+
       </section>
 
       <section id="projects" className="mx-auto max-w-3xl px-6 pb-20">
