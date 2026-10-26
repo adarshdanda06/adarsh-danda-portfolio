@@ -19,6 +19,7 @@ const socials = [
   { label: "github", href: "https://github.com/adarshdanda" },
   { label: "linkedin", href: "https://www.linkedin.com/in/adarshdanda" },
   { label: "x", href: "https://x.com/adarshdanda" },
+  { label: "email", href: "mailto:hello@example.com" },
 ];
 
 const projects = [
@@ -59,9 +60,6 @@ function Index() {
           <a href="#projects" className={linkClass}>
             projects
           </a>
-          <a href="#contact" className={linkClass}>
-            contact
-          </a>
         </nav>
 
         <NextArrow to="social" />
@@ -74,8 +72,7 @@ function Index() {
             <a
               key={s.href}
               href={s.href}
-              target="_blank"
-              rel="noreferrer"
+              {...(s.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noreferrer" })}
               className="text-primary underline-offset-4 hover:underline"
             >
               {s.label}
@@ -109,14 +106,6 @@ function Index() {
             </article>
           ))}
         </div>
-        <NextArrow to="contact" />
-      </section>
-
-      <section id="contact" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
-        <h2 className="mb-8 text-2xl font-semibold">contact</h2>
-        <a href="mailto:hello@example.com" className="text-primary underline-offset-4 hover:underline">
-          hello@example.com
-        </a>
       </section>
 
       <footer className="mx-auto max-w-3xl px-6 pb-16 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
