@@ -14,6 +14,12 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+const socials = [
+  { label: "github", href: "https://github.com/adarshdanda" },
+  { label: "linkedin", href: "https://www.linkedin.com/in/adarshdanda" },
+  { label: "x", href: "https://x.com/adarshdanda" },
+];
+
 const projects = [
   { title: "Project One", desc: "A short description of a project you built, what it does, and why it matters." },
   { title: "Project Two", desc: "A high-performance system written to solve a hard problem quickly and reliably." },
@@ -27,17 +33,33 @@ const contests = [
   { title: "Academic Challenge", date: "2022", place: "2nd", desc: "Competed in computer science against regional teams." },
 ];
 
+const linkClass =
+  "text-muted-foreground transition-colors hover:text-foreground hover:underline hover:underline-offset-8";
+
 function Index() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-20 font-mono">
-      <h1 className="text-5xl font-bold tracking-tight">adarsh danda</h1>
-      <nav className="mt-4 flex gap-4 text-sm text-muted-foreground">
-        <a href="#projects" className="hover:text-foreground">projects</a>
-        <a href="#contests" className="hover:text-foreground">contests</a>
-        <a href="mailto:hello@example.com" className="hover:text-foreground">contact</a>
-      </nav>
+    <main className="font-mono">
+      <section className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
+        <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
 
-      <section id="projects" className="mt-20">
+        <nav className="mt-16 flex flex-col items-center gap-6 text-3xl sm:text-4xl">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            {socials.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className={linkClass}>
+                {s.label}
+              </a>
+            ))}
+          </div>
+          <a href="#projects" className={linkClass}>
+            projects
+          </a>
+          <a href="mailto:hello@example.com" className={linkClass}>
+            contact
+          </a>
+        </nav>
+      </section>
+
+      <section id="projects" className="mx-auto max-w-3xl px-6 pb-20">
         <h2 className="mb-8 text-2xl font-semibold">projects</h2>
         <div className="space-y-10">
           {projects.map((p) => (
@@ -53,7 +75,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="contests" className="mt-20">
+      <section id="contests" className="mx-auto max-w-3xl px-6 pb-20">
         <h2 className="mb-8 text-2xl font-semibold">contests</h2>
         <div className="grid gap-6 sm:grid-cols-2">
           {contests.map((c) => (
@@ -69,7 +91,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className="mt-24 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
+      <footer className="mx-auto max-w-3xl px-6 pb-16 text-sm text-muted-foreground">© 2026 adarsh danda</footer>
     </main>
   );
 }
