@@ -79,6 +79,15 @@ function Index() {
         </div>
       </section>
 
+      <section id="bio" className="mx-auto max-w-3xl px-6 pb-20">
+        <h2 className="mb-8 text-2xl font-semibold">bio</h2>
+        <p className="text-muted-foreground">
+          I build software and hardware, and I like taking an idea from a rough sketch to something
+          that actually runs. Most of my work sits at the overlap of code, circuits, and clean
+          design — small tools, quick prototypes, and the occasional contest build.
+        </p>
+      </section>
+
       <section id="contests" className="mx-auto max-w-3xl px-6 pb-20">
         <h2 className="mb-8 text-2xl font-semibold">contests</h2>
         <div className="grid gap-6 sm:grid-cols-2">
