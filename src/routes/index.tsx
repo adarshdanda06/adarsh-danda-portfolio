@@ -44,34 +44,17 @@ function Index() {
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">adarsh danda</h1>
 
         <nav className="mt-16 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-3xl sm:text-4xl">
-          <a href="#social" className={linkClass}>
-            social
-          </a>
           <a href="#bio" className={linkClass}>
             bio
+          </a>
+          <a href="#social" className={linkClass}>
+            social
           </a>
           <a href="#projects" className={linkClass}>
             projects
           </a>
         </nav>
 
-        <NextArrow to="social" />
-      </section>
-
-      <section id="social" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
-        <h2 className="mb-8 text-2xl font-semibold">social</h2>
-        <div className="flex flex-wrap gap-x-8 gap-y-3">
-          {socials.map((s) => (
-            <a
-              key={s.href}
-              href={s.href}
-              {...(s.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noreferrer" })}
-              className="text-primary underline-offset-4 hover:underline"
-            >
-              {s.label}
-            </a>
-          ))}
-        </div>
         <NextArrow to="bio" />
       </section>
 
@@ -98,6 +81,23 @@ function Index() {
             </a>
             , and worked on agentic AI and ML systems during other experiences.
           </p>
+        </div>
+        <NextArrow to="social" />
+      </section>
+
+      <section id="social" className="relative mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-20">
+        <h2 className="mb-8 text-2xl font-semibold">social</h2>
+        <div className="flex flex-wrap gap-x-8 gap-y-3">
+          {socials.map((s) => (
+            <a
+              key={s.href}
+              href={s.href}
+              {...(s.href.startsWith("mailto:") ? {} : { target: "_blank", rel: "noreferrer" })}
+              className="text-primary underline-offset-4 hover:underline"
+            >
+              {s.label}
+            </a>
+          ))}
         </div>
         <NextArrow to="projects" />
       </section>
